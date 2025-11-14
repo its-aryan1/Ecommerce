@@ -1,118 +1,182 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-ul li{
-    display: inline-block;
-    margin: 15px;
-    font-size: 2vw;
+
+/* HEADER */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: black;
+    padding: 10px;
+    color: white;
+    border-bottom: 3px solid blueviolet;
 }
-ul li a{
+
+/* NAVBAR */
+ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+ul li {
+    margin: 10px;
+    font-size: 4vw;
+}
+
+ul li a {
     color: aliceblue;
     text-decoration: none;
 }
-    
-header{
-    display:flex;
-    flex-direction:row;
-    background:black;
-    height: 10vh;
-    color: whitesmoke;
-    border: 5px solid blueviolet;
-    border: radius 15px;
-    
-}/*
-.product box{
+
+/* SEARCH SECTION */
+.header-right {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: auto;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    justify-content: flex-end;
+}
 
-}*//*
-.pop{
-    background-color: aqua;
-    height: 150px;
-    width: 160px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+.search-input {
+    width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
 
-}*/
-.products{
+.btn {
+    color: white;
+    padding: 10px 15px;
+    background: blueviolet;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* CART */
+.cart {
+    background: violet;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* PRODUCTS */
+.products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 25px;
-}
-.box{
-     background: white;
     padding: 20px;
-    margin: 20px;
-    width:200px;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    gap: 20px;
+}
+
+.box {
+    background: white;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
     border-radius: 10px;
-    justify-content:center ;
-    display: flex;
-    flex-direction: column;
-    
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-footer{
-    background:purple;
-    padding: 34px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 1%;
-    box-shadow: 5px 5px 10px (0,0,0.8) ;
-}
-.img {
+
+.box img {
     width: 100%;
     border-radius: 10px;
-    width: 250px; ;
 }
-.box h4{
-    text-align: center;    
-}
-.box p{
-    color: rgb(100, 163, 6);
-    text-align: center;
-}
-.search-box{ 
-    width:60%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin: 0 10px;
-    text-align: center;
-}
-.btn{
-    display: inline-block;
-    color:white;
-    padding:10px 15px;
-    background:blueviolet;
-    border-radius: 6px;
 
-}
-.cart {
-    display: contents;
-    margin-left: auto;
-    padding: 15px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: violet;
+.box h4, .box p {
+    text-align: center;
 }
 
 .add-to-cart {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background: #28a745;
+    width: 100%;
 }
 
 .add-to-cart:hover {
-    background-color: #218838;
+    background: #218838;
+}
+
+/* FOOTER */
+footer {
+    background: purple;
+    padding: 25px;
+    text-align: center;
+    color: white;
+}
+
+/* ------------------------- */
+/* 📱 MOBILE RESPONSIVE FIX */
+/* ------------------------- */
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    ul li {
+        font-size: 5vw;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .products {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .box {
+        max-width: 90%;
+    }
+}
+
+
+/* SEARCH DROPDOWN */
+.search-area {
+    position: relative;
+    width: 60%;
+}
+
+#suggestions-box {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background:black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.suggestion-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+    .search-area {
+        width: 80%;
+    }
 }
