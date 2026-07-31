@@ -74,7 +74,6 @@ document.addEventListener("click", (e) => {
 
 
 
-
 const slides = [
 
 {
@@ -120,3 +119,27 @@ if(i==slides.length){
 i=0;
 
 }
+
+show();
+
+}
+
+document.querySelector(".left").onclick=function(){
+
+i--;
+
+if(i<0){
+
+i=slides.length-1;
+
+}
+
+show();
+
+}
+
+setInterval(function(){
+
+document.querySelector(".right").click();
+
+},6000);
