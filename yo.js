@@ -71,3 +71,52 @@ document.addEventListener("click", (e) => {
         suggestionsBox.style.display = "none";
     }
 });
+
+
+
+
+const slides = [
+
+{
+img:"https://imgs.search.brave.com/Zo3SbhyJ0-sLMn2L87fc6snYqn3uT3KDLTu9K5_krUw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvZGtqNTMw/ZXdpaDRjMS5wbmc",
+title:"GTA VI",
+desc:"Experience the next generation of gaming."
+},
+
+{
+img:"https://imgs.search.brave.com/0CHSYd51ylrgjg1TC2x5CVklKcJCwiDgyVG67S1Euy4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDExNDg0/ODgzLmpwZw",
+title:"God Of War",
+desc:"Fight like a true warrior."
+},
+
+{
+img:"https://imgs.search.brave.com/rku8JSl0fKLmdnHawPyCMH4xdw_hYarGhfGUJvEHe5U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDEyNDA1/NDY1LmpwZw",
+title:"Forza Horizon",
+desc:"Drive your dream cars."
+},
+
+];
+
+let i=0;
+
+const image=document.getElementById("banner");
+const title=document.getElementById("title");
+const desc=document.getElementById("desc");
+
+function show(){
+
+image.src=slides[i].img;
+title.innerHTML=slides[i].title;
+desc.innerHTML=slides[i].desc;
+
+}
+
+document.querySelector(".right").onclick=function(){
+
+i++;
+
+if(i==slides.length){
+
+i=0;
+
+}
